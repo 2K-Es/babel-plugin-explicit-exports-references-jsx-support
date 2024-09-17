@@ -3,7 +3,7 @@ import debugFactory from 'debug';
 import * as util from '@babel/types';
 import template from '@babel/template';
 
-const pkgName = 'babel-plugin-explicit-exports-references';
+const pkgName = 'babel-plugin-explicit-exports-references-jsx-support';
 const debug = debugFactory(`${pkgName}:index`);
 let globalScope: NodePath['scope'];
 
@@ -99,7 +99,7 @@ export default function (): PluginObj<
   PluginPass & { opts: { transformAssignExpr: boolean } }
 > {
   return {
-    name: 'explicit-exports-references',
+    name: 'explicit-exports-references-jsx-support',
     visitor: {
       Program(programPath) {
         globalScope = programPath.scope;
